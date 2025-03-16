@@ -531,7 +531,7 @@ namespace ScharpExercises
             //    {
             //        Console.Write("*");
             //    }
-            //    Console.WriteLine(); 
+            //    Console.WriteLine();
             //}
 
             //----------------------------------------------------------------------
@@ -554,35 +554,61 @@ namespace ScharpExercises
 
             //-----------------------------------------------------------------------
             //9. Print a Diamond Pattern (For Loop)
-            Console.WriteLine("Enter the number of line: \n");
-            int num = int.Parse(Console.ReadLine());
-            for (int i = 1; i <= num; i++)
+
+            //Console.WriteLine("Enter the number of line: \n");
+            //int num = int.Parse(Console.ReadLine());
+            //// Upper half of the diamond
+            //for (int i = 1; i <= num; i++)
+            //{
+            //    for (int j = i; j < num; j++)
+            //        Console.Write(" ");
+
+            //    for (int j = 1; j <= (2 * i - 1); j++)
+            //        Console.Write("*");
+
+            //    Console.WriteLine();
+            //}
+
+            //// Lower half of the diamond
+            //for (int i = num - 1; i >= 1; i--)
+            //{
+            //    for (int j = num; j > i; j--)
+            //        Console.Write(" ");
+
+            //    for (int j = 1; j <= (2 * i - 1); j++)
+            //        Console.Write("*");
+
+            //    Console.WriteLine();
+            //}
+
+            //-----------------------------------------------------------------------------
+            //10. Guess Game with helper
+            Random rng = new Random();
+
+            int num = 0;
+            int rand = rng.Next(1,101);
+            //Console.WriteLine("Enter your Guess");
+            //num = int.Parse(Console.ReadLine());
+            do
             {
-                for (int j = i; j <= num; j++)
-                {
-                    Console.Write(" ");
-                }
-                for (int k = 1; k <= (2 * i - 1); k++)
-                {
-                    Console.Write("*");
-                }
-                for (int j = i; j <= num; j++)
-                {
-                    Console.Write(" ");
-                }
-                for (int k = 1; k <= (2 * i - 1); k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
+                Console.WriteLine("Enter your Guess");
+                num = int.Parse(Console.ReadLine());
 
+                if (num > rand)
+                {
+                    Console.WriteLine("Try Lower!");
+                }
+                else if (num < rand)
+                {
+                    Console.WriteLine("Try Higher!");
+                }
+                else
+                {
+                    Console.WriteLine("You Win!");
+                }
             }
-
+            while (num != rand);
             
-
-
-
-
 
 
 
