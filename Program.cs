@@ -619,8 +619,37 @@ namespace ScharpExercises
             //}
             //while (num != rand);
 
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("\nSelect A Task: ");
+                Console.WriteLine("2.Task 2 (Foor Loop)");
+                Console.WriteLine("3.Task 3 (Array)");
+                Console.WriteLine("0. Exit");
+
+                Console.Write("Enter your task choice: ");
+                int choice = int.Parse(Console.ReadLine());
+
+                switch(choice){
+                    case 2: ChoiceTask2FooeLoop(); break;
+                    case 3: ChoiceTask3Array(); break;
+                    case 0: return;
+                    default: Console.WriteLine("Invalid Choice! Try again."); break;
+                }
+                Console.ReadLine();
+
+            }
+
+            
+
+            
 
 
+        }
+
+        //choice tasks in tasks 2 (for loop)
+        static void ChoiceTask2FooeLoop()
+        {
             while (true)
             {
                 Console.Clear();
@@ -635,18 +664,9 @@ namespace ScharpExercises
                 Console.WriteLine("8. Print Pyramid Pattern");
                 Console.WriteLine("9. Print Diamond Pattern");
                 Console.WriteLine("10. Guess the Number Game");
-                Console.WriteLine("11. Array Initialization And Output");
-                Console.WriteLine("12. Find Maximum & Minimum in an Array");
-                Console.WriteLine("13. Count Even & Odd Numbers");
-                Console.WriteLine("14. Reverse an Array");
-                Console.WriteLine("15. Search for a Number in an Array");
-                Console.WriteLine("16. Sorting an Array (Ascending Order)");
-                Console.WriteLine("17. Merging Two Arrays ");
-                Console.WriteLine("18. Remove Duplicates from an Array");
-                Console.WriteLine("19. Second Largest Number in an Array");
                 Console.WriteLine("0. Exit");
 
-                Console.Write("Enter your choice: ");
+                Console.Write("Enter your program choice: ");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -661,15 +681,6 @@ namespace ScharpExercises
                     case 8: PrintPyramid(); break;
                     case 9: PrintDiamond(); break;
                     case 10: GuessGame(); break;
-                    case 11: ArrayInitializationOutput(); break;
-                    case 12: MaximumMinimumInAnArray(); break;
-                    case 13: CountEvenAndOddNumbers(); break;
-                    case 14: ReverseArray(); break;
-                    case 15: SearchForNumberInArray();break;
-                    case 16: SortingAnArray();break;
-                    case 17: MergingTwoArrays();break;
-                    case 18: RemoveDuplicatesFromAnArray();break;
-                    case 19: SecondLargestNumberInAnArray();break;
                     case 0: return;
                     default: Console.WriteLine("Invalid Choice! Try again."); break;
                 }
@@ -677,10 +688,46 @@ namespace ScharpExercises
             }
         }
 
+        //choice tasks in tasks 3 (Array)
+        static void ChoiceTask3Array()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("\nSelect a Program:");
+                Console.WriteLine("1. Array Initialization And Output");
+                Console.WriteLine("2. Find Maximum & Minimum in an Array");
+                Console.WriteLine("3. Count Even & Odd Numbers");
+                Console.WriteLine("4. Reverse an Array");
+                Console.WriteLine("5. Search for a Number in an Array");
+                Console.WriteLine("6. Sorting an Array (Ascending Order)");
+                Console.WriteLine("7. Merging Two Arrays ");
+                Console.WriteLine("8. Remove Duplicates from an Array");
+                Console.WriteLine("9. Second Largest Number in an Array");
+                Console.WriteLine("0. Exit");
 
+                Console.Write("Enter your choice: ");
+                int choice = int.Parse(Console.ReadLine());
 
+                switch (choice)
+                {
+                    case 1: ArrayInitializationOutput(); break;
+                    case 2: MaximumMinimumInAnArray(); break;
+                    case 3: CountEvenAndOddNumbers(); break;
+                    case 4: ReverseArray(); break;
+                    case 5: SearchForNumberInArray(); break;
+                    case 6: SortingAnArray(); break;
+                    case 7: MergingTwoArrays(); break;
+                    case 8: RemoveDuplicatesFromAnArray(); break;
+                    case 9: SecondLargestNumberInAnArray(); break;
+                    case 0: return;
+                    default: Console.WriteLine("Invalid Choice! Try again."); break;
+                }
+                Console.ReadLine();
+            }
+        }
 
-
+        //-----------------------------------------------------------------------------------Task 2 (Foor Loop)
 
         // 1. Simple Calculator
         static void SimpleCalculator()
@@ -1064,19 +1111,22 @@ namespace ScharpExercises
             int[] num = new int[10];
             Console.WriteLine("Enter 10 numbers : ");
             for (int i = 0; i < num.Length; i++)
-            {
                 num[i] = int.Parse(Console.ReadLine());
-                
-            }
+
+            int Max = num[0];
+            int Min = num[0];
+  
             for (int j=0; j<num.Length; j++)
             {
-                Console.WriteLine(num[j]);
-            }
-            int Max = num.Max();
-            int Min = num.Min();
+                if (num[j] > Max)
+                    Max = num[j];
 
-            Console.WriteLine("The Max Number is: " + Max);
-            Console.WriteLine("The Min Number is: " + Min);
+                if (num[j] < Min)
+                    Min = num[j];
+            }
+
+            Console.WriteLine($"The Max number is {Max}");
+            Console.WriteLine($"The Min Number is {Min}");
 
         }
 
@@ -1110,8 +1160,8 @@ namespace ScharpExercises
                 }
             }
 
-            Console.WriteLine("The Number of Even Numbers are: " + CountEven);
-            Console.WriteLine("The Number of Odd Numbers are: " + CountOdd);
+            Console.WriteLine($"The Number of Even Numbers are: {CountEven}");
+            Console.WriteLine($"The Number of Odd Numbers are: {CountOdd}");
 
         }
 
@@ -1122,20 +1172,24 @@ namespace ScharpExercises
             int N = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter " + N + " Numbers : ");
             int[] num = new int[N];
-            Array.Reverse(num);
-
             for (int i = 0; i < num.Length; i++)
             {
                 num[i] = int.Parse(Console.ReadLine());
             }
 
-            Array.Reverse(num);
-            Console.WriteLine("The Reverse array \n");
-            for (int i = 0; i < num.Length; i++)
-            {
-                Console.WriteLine(num[i]);
+            //Array.Reverse(num);
+            //Console.WriteLine("The Reverse array \n");
+            //for (int i = 0; i < num.Length; i++)
+            //{
+            //    Console.WriteLine(num[i]);
 
+            //}
+
+            for (int i=N-1; i>=0; i--)
+            {
+                Console.WriteLine(num[i]+ " ");
             }
+            Console.WriteLine();
 
         }
 
