@@ -589,25 +589,27 @@ namespace ScharpExercises
             int rand = rng.Next(1,101);
             //Console.WriteLine("Enter your Guess");
             //num = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("Enter your Guess");
-                num = int.Parse(Console.ReadLine());
+            //do
+            //{
+            //    Console.WriteLine("Enter your Guess");
+            //    num = int.Parse(Console.ReadLine());
 
-                if (num > rand)
-                {
-                    Console.WriteLine("Try Lower!");
-                }
-                else if (num < rand)
-                {
-                    Console.WriteLine("Try Higher!");
-                }
-                else
-                {
-                    Console.WriteLine("You Win!");
-                }
-            }
-            while (num != rand);
+            //    if (num > rand)
+            //    {
+            //        Console.WriteLine("Try Lower!");
+            //    }
+            //    else if (num < rand)
+            //    {
+            //        Console.WriteLine("Try Higher!");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("You Win!");
+            //    }
+            //}
+            //while (num != rand);
+
+            //-------------------------------------------------------------------
             
 
 
